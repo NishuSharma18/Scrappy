@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -59,12 +61,16 @@ public class Invoice extends AppCompatActivity {
     long invoiceNo = 0;
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
     SimpleDateFormat datePatternFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm a");
-
+     Bitmap bmp,scaledBitmap,bmp2,scaledBitmap2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invoice);
 
+        bmp = BitmapFactory.decodeResource(getResources(),R.drawable.img1);
+        scaledBitmap = Bitmap.createScaledBitmap(bmp,70,70,false);
+        bmp2 = BitmapFactory.decodeResource(getResources(),R.drawable.header2);
+        scaledBitmap2 = Bitmap.createScaledBitmap(bmp2,250,80,false);
         callFindViewById();
         callOnClickListener();
 
@@ -106,58 +112,68 @@ public class Invoice extends AppCompatActivity {
         PdfDocument myPdfDocument = new PdfDocument();
         Paint paint = new Paint();
         Paint linePaint = new Paint();
-        linePaint.setColor(Color.rgb(0,50,250));
-        PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(250,350,1).create();
+        linePaint.setColor(Color.rgb(0,0,0));
+        PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(250,400,1).create();
         PdfDocument.Page myPage = myPdfDocument.startPage(myPageInfo);
         Canvas canvas = myPage.getCanvas();
 
-        paint.setTextSize(15.5f);
-        paint.setColor(Color.rgb(0,50,250));
+        canvas.drawBitmap(scaledBitmap2,0,0,paint);
+        canvas.drawBitmap(scaledBitmap,160,280,paint);
 
-        canvas.drawText("Welcome To the Scrap Store",20,20,paint);
+        paint.setTextSize(18f);
+        paint.setColor(Color.rgb(0,0,0));
+
+        canvas.drawText("Welcome To the Scrap Store",15,75,paint);
         paint.setTextSize(8.5f);
-        canvas.drawText("Room no -204, SVBH Hostel, MNNIT Allahabad,",20,40,paint);
-        canvas.drawText("Teliyarganj, 210679, Uttar Pradesh",20,55,paint);
+        canvas.drawText("Room no -204, SVBH Hostel, MNNIT Allahabad,",5,90,paint);
+        canvas.drawText("Teliyarganj, 210679, Uttar Pradesh",5,105,paint);
         linePaint.setStyle(Paint.Style.FILL);
         linePaint.setPathEffect(new DashPathEffect(new float[]{5,5},0));
 
-        canvas.drawLine(20,65,230,65,linePaint);
+        canvas.drawLine(10,120,240,120,linePaint);
 
-        canvas.drawText("Customer Name: "+ name.getText(),20,80,paint);
-        canvas.drawLine(20,90,230,90,linePaint);
-
-        canvas.drawText("Purchase:" ,20,105,paint);
-        canvas.drawText(spinner.getSelectedItem().toString(),20,135,paint);
-        canvas.drawText(quantity.getText()+" kgs",120,135,paint);
+        paint.setColor(Color.rgb(128,0,128));
+        canvas.drawText("Customer Name :  "+ name.getText(),20,135,paint);
+        paint.setColor(Color.rgb(0,50,250));
+        canvas.drawLine(10,145,240,145,linePaint);
+        paint.setTextSize(10.5f);
+        canvas.drawText("Purchase :" ,20,160,paint);
+        paint.setTextSize(8.5f);
+        canvas.drawText(spinner.getSelectedItem().toString(),20,190,paint);
+        canvas.drawText(quantity.getText()+" kgs",120,190,paint);
         // amount calculation
         double amount = itemPrice[spinner.getSelectedItemPosition()]*Double.parseDouble(quantity.getText().toString());
         paint.setTextAlign(Paint.Align.RIGHT);
-        canvas.drawText(String.valueOf(decimalFormat.format(amount)),230,135,paint);
+        canvas.drawText(String.valueOf(decimalFormat.format(amount)),230,190,paint);
         paint.setTextAlign(Paint.Align.LEFT);
 
-        canvas.drawText("+%" ,20,175,paint);
-        canvas.drawText("Tax 8%",120,175,paint);
+        canvas.drawText("+%" ,20,220,paint);
+        canvas.drawText("Tax 8%",120,220,paint);
         paint.setTextAlign(Paint.Align.RIGHT);
-        canvas.drawText(decimalFormat.format(amount*8/100),230,175,paint);
+        canvas.drawText(decimalFormat.format(amount*8/100),230,220,paint);
         paint.setTextAlign(Paint.Align.LEFT);
 
-        canvas.drawLine(20,210,230,210,linePaint);
-        paint.setTextSize(10f);
-        canvas.drawText("Total",120,225,paint);
+        canvas.drawLine(10,235,240,235,linePaint);
+        paint.setTextSize(12f);
+        paint.setColor(Color.rgb(0,0,0));
+        canvas.drawText("Total :",120,265,paint);
         paint.setTextAlign(Paint.Align.RIGHT);
-        canvas.drawText(decimalFormat.format(amount*8/100 + amount),230,225,paint);
+        canvas.drawText(decimalFormat.format(amount*8/100 + amount),230,265,paint);
         paint.setTextAlign(Paint.Align.LEFT);
         paint.setTextSize(8.5f);
 
         // fot date and time
-        canvas.drawText("Date: " +datePatternFormat.format(new Date().getTime()),20,260,paint );
-        canvas.drawText("Invoice No:",20,275,paint);
-        canvas.drawText(String.valueOf(invoiceNo+1),63,275,paint);
-        canvas.drawText("Payment Successful",20,290,paint);
+        canvas.drawText("Date: " +datePatternFormat.format(new Date().getTime()),10,305,paint );
+        canvas.drawText("Invoice No: ",10,320,paint);
+        canvas.drawText(String.valueOf(invoiceNo+1),55,320,paint);
+
+        paint.setColor(Color.rgb(128,0,128));
+        canvas.drawText("Payment Successful",10,335,paint);
 
         paint.setTextAlign(Paint.Align.CENTER);
-        paint.setTextSize(12f);
-        canvas.drawText("Thank You!",canvas.getWidth()/2,320,paint);
+        paint.setTextSize(14f);
+        paint.setColor(Color.rgb(0,100,0));
+        canvas.drawText("Thank You!",canvas.getWidth()/2,370,paint);
 
 
         // creating file
