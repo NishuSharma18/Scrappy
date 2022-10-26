@@ -16,8 +16,16 @@
 package com.example.scrappy;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.DashPathEffect;
+import android.graphics.Paint;
+import android.graphics.pdf.PdfDocument;
+import android.graphics.pdf.PdfDocument.PageInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -31,7 +39,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Invoice extends AppCompatActivity {
@@ -46,6 +58,7 @@ public class Invoice extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     long invoiceNo = 0;
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
+    SimpleDateFormat datePatternFormat = new SimpleDateFormat("dd-MM-yyyy hh:mm a");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +84,7 @@ public class Invoice extends AppCompatActivity {
 
     private void callOnClickListener() {
         saveAndPrint.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
             dataobj.invoiceNo = invoiceNo+1;
@@ -81,8 +95,81 @@ public class Invoice extends AppCompatActivity {
             dataobj.amt = Double.valueOf(decimalFormat.format(dataobj.getQuantity()*itemPrice[spinner.getSelectedItemPosition()]));
 
             myRef.child(String.valueOf(invoiceNo+1)).setValue(dataobj);
+
+            printPdf();
             }
         });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void printPdf() {
+        PdfDocument myPdfDocument = new PdfDocument();
+        Paint paint = new Paint();
+        Paint linePaint = new Paint();
+        linePaint.setColor(Color.rgb(0,50,250));
+        PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(250,350,1).create();
+        PdfDocument.Page myPage = myPdfDocument.startPage(myPageInfo);
+        Canvas canvas = myPage.getCanvas();
+
+        paint.setTextSize(15.5f);
+        paint.setColor(Color.rgb(0,50,250));
+
+        canvas.drawText("Welcome To the Scrap Store",20,20,paint);
+        paint.setTextSize(8.5f);
+        canvas.drawText("Room no -204, SVBH Hostel, MNNIT Allahabad,",20,40,paint);
+        canvas.drawText("Teliyarganj, 210679, Uttar Pradesh",20,55,paint);
+        linePaint.setStyle(Paint.Style.FILL);
+        linePaint.setPathEffect(new DashPathEffect(new float[]{5,5},0));
+
+        canvas.drawLine(20,65,230,65,linePaint);
+
+        canvas.drawText("Customer Name: "+ name.getText(),20,80,paint);
+        canvas.drawLine(20,90,230,90,linePaint);
+
+        canvas.drawText("Purchase:" ,20,105,paint);
+        canvas.drawText(spinner.getSelectedItem().toString(),20,135,paint);
+        canvas.drawText(quantity.getText()+" kgs",120,135,paint);
+        // amount calculation
+        double amount = itemPrice[spinner.getSelectedItemPosition()]*Double.parseDouble(quantity.getText().toString());
+        paint.setTextAlign(Paint.Align.RIGHT);
+        canvas.drawText(String.valueOf(decimalFormat.format(amount)),230,135,paint);
+        paint.setTextAlign(Paint.Align.LEFT);
+
+        canvas.drawText("+%" ,20,175,paint);
+        canvas.drawText("Tax 8%",120,175,paint);
+        paint.setTextAlign(Paint.Align.RIGHT);
+        canvas.drawText(decimalFormat.format(amount*8/100),230,175,paint);
+        paint.setTextAlign(Paint.Align.LEFT);
+
+        canvas.drawLine(20,210,230,210,linePaint);
+        paint.setTextSize(10f);
+        canvas.drawText("Total",120,225,paint);
+        paint.setTextAlign(Paint.Align.RIGHT);
+        canvas.drawText(decimalFormat.format(amount*8/100 + amount),230,225,paint);
+        paint.setTextAlign(Paint.Align.LEFT);
+        paint.setTextSize(8.5f);
+
+        // fot date and time
+        canvas.drawText("Date: " +datePatternFormat.format(new Date().getTime()),20,260,paint );
+        canvas.drawText("Invoice No:",20,275,paint);
+        canvas.drawText(String.valueOf(invoiceNo+1),63,275,paint);
+        canvas.drawText("Payment Successful",20,290,paint);
+
+        paint.setTextAlign(Paint.Align.CENTER);
+        paint.setTextSize(12f);
+        canvas.drawText("Thank You!",canvas.getWidth()/2,320,paint);
+
+
+        // creating file
+        myPdfDocument.finishPage(myPage);
+        File file = new File(this.getExternalFilesDir("/"),"DroidRushInvoice.pdf");
+        try {
+            myPdfDocument.writeTo(new FileOutputStream(file));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        myPdfDocument.close();
+
     }
 
     private void callFindViewById() {
