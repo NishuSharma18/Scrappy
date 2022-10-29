@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ /*
+  ~ *  Created by Nishu Sharma on 29/10/22, 6:46 PM
+  ~ *  Copyright Ⓒ 2022. All rights reserved Ⓒ 2022 http://freefuninfo.com/
+  ~ *  Last modified: 29/10/22, 6:46 PM
+  ~ *
+  ~ *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
+  ~ *  except in compliance with the License. You may obtain a copy of the License at
+  ~ *  http://www.apache.org/licenses/LICENS... Unless required by applicable law or agreed to in writing, software
+  ~ *   distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+  ~ *   either express or implied. See the License for the specific language governing permissions and
+  ~ *   limitations under the License.
+  ~ */
+  -->
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="1dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardElevation="3dp"
+    app:contentPadding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/profiles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+           <de.hdodenhof.circleimageview.CircleImageView
+               android:id="@+id/profilePic"
+               android:layout_width="70dp"
+               android:layout_height="70dp"
+               android:layout_marginEnd="5dp"
+               android:src="@drawable/img1"
+               app:civ_border_width="3dp"
+               app:civ_border_color="@color/black"
+               />
+            <TextView
+                android:id="@+id/dealerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textSize="20sp"
+                android:textColor="@color/purple_200"/>
+
+        </LinearLayout>
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:layout_below="@+id/profiles"
+            android:layout_marginEnd="10dp"/>
+
+        <TextView
+            android:id="@+id/dateRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profiles"
+            android:layout_toEndOf="@+id/ratingBar"
+            android:textColor="@color/yellow"
+            android:text="dd/MM/yyyy"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/ReviewContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dateRating"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:text="The original review given by the customer"
+
+            />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

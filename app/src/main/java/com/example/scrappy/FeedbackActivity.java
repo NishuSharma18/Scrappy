@@ -1,8 +1,8 @@
 /*
  *
- *   Created by Nishu Sharma on 26/10/22, 12:46 AM
+ *   Created by Nishu Sharma on 28/10/22, 5:28 PM
  *   Copyright Ⓒ 2022. All rights reserved Ⓒ 2022 http://freefuninfo.com/
- *   Last modified: 26/10/22, 12:19 AM
+ *   Last modified: 28/10/22, 5:28 PM
  *
  *   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
  *   except in compliance with the License. You may obtain a copy of the License at
@@ -16,25 +16,36 @@
 package com.example.scrappy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
-private Button bt;
+public class FeedbackActivity extends AppCompatActivity {
+
+    private TextView dealerName,totalRating;
+    private ImageView profilePic;
+    private RatingBar ratingBar;
+    private RecyclerView reviews;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        bt = findViewById(R.id.button);
-        bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,FeedbackActivity.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_feedback);
+
+        // initialising all values
+        dealerName = findViewById(R.id.dealerName);
+        profilePic = findViewById(R.id.profilePic);
+        ratingBar = findViewById(R.id.ratingBar);
+        totalRating = findViewById(R.id.ratingsQnt);
+        reviews = findViewById(R.id.reviewList);
+
+
+
+
     }
 }
