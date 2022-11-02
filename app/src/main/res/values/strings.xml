@@ -17,4 +17,15 @@
     <string name="app_name">Scrappy</string>
     <string name="button">Button</string>
     <string name="in_kgs">(in Kgs)</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_username">Enter UserName</string>
+    <string name="forget_password">Forget Password?</string>
+    <string name="or_sign_in_with">or sign in with</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="register">Register</string>
+    <string name="registration">Registration</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="already_have_an_account">already have an account?</string>
 </resources>

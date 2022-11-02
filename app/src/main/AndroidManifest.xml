@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Scrappy">
         <activity
+            android:name=".GoogleSignInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".FeedbackActivity"
             android:exported="false" />
         <activity

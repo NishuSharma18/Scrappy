@@ -1,8 +1,8 @@
 /*
  *
- *   Created by Nishu Sharma on 26/10/22, 12:46 AM
+ *   Created by Nishu Sharma on 02/11/22, 11:01 AM
  *   Copyright Ⓒ 2022. All rights reserved Ⓒ 2022 http://freefuninfo.com/
- *   Last modified: 26/10/22, 12:19 AM
+ *   Last modified: 02/11/22, 11:01 AM
  *
  *   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
  *   except in compliance with the License. You may obtain a copy of the License at
@@ -17,24 +17,13 @@ package com.example.scrappy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
-private Button bt;
+public class GoogleSignInActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        bt = findViewById(R.id.button);
-        bt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+        setContentView(R.layout.activity_google_sign_in);
     }
 }

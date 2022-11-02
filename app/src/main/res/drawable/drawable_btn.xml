@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ /*
-  ~ *  Created by Nishu Sharma on 26/10/22, 12:46 AM
+  ~ *  Created by Nishu Sharma on 02/11/22, 9:55 AM
   ~ *  Copyright Ⓒ 2022. All rights reserved Ⓒ 2022 http://freefuninfo.com/
-  ~ *  Last modified: 25/10/22, 11:07 PM
+  ~ *  Last modified: 02/11/22, 9:55 AM
   ~ *
   ~ *  Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file
   ~ *  except in compliance with the License. You may obtain a copy of the License at
@@ -14,15 +13,7 @@
   ~ */
   -->
 
-<resources>
-    <color name="purple_200">#FF3700B3</color>
-    <color name="gray">#7393B3</color>
-    <color name="yellow">#E8B827</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="lightBlack">#B9222020</color>
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+        <solid android:color="@color/purple_200"/>
+        <corners android:radius="70dp"/>
+    </shape>
