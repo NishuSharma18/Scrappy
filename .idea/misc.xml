@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_invoice.xml" value="0.18857142857142858" />
-        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_main.xml" value="0.14285714285714285" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/drawable/drawable_btn.xml" value="0.187" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/drawable/input_bg.xml" value="0.187" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_feedback.xml" value="0.2857142857142857" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_google_sign_in.xml" value="0.12537993920972645" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_invoice.xml" value="0.2857142857142857" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_login.xml" value="0.2546875" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_main.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_registration.xml" value="0.2857142857142857" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/row_review.xml" value="0.32044198895027626" />
       </map>
     </option>
   </component>

@@ -76,11 +76,21 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-
+        // Email authentication
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 PerformAuth();
+            }
+        });
+
+
+        // google authentication through different class
+        googleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              Intent intent = new Intent(LoginActivity.this,GoogleSignInActivity.class);
+              startActivity(intent);
             }
         });
 
@@ -121,7 +131,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(LoginActivity.this,FeedbackActivity.class);
+        Intent intent = new Intent(LoginActivity.this,Invoice.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }

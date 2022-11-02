@@ -47,6 +47,7 @@ import java.io.IOException;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class Invoice extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -66,6 +67,7 @@ public class Invoice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invoice);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         bmp = BitmapFactory.decodeResource(getResources(),R.drawable.img1);
         scaledBitmap = Bitmap.createScaledBitmap(bmp,70,70,false);
