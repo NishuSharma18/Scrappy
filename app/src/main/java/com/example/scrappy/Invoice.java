@@ -19,6 +19,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -34,6 +35,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -74,7 +76,8 @@ public class Invoice extends AppCompatActivity {
         bmp2 = BitmapFactory.decodeResource(getResources(),R.drawable.header2);
         scaledBitmap2 = Bitmap.createScaledBitmap(bmp2,250,80,false);
         callFindViewById();
-        callOnClickListener();
+        callOnClickListener1();
+        callOnClickListener2();
 
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -90,7 +93,18 @@ public class Invoice extends AppCompatActivity {
 
     }
 
-    private void callOnClickListener() {
+    private void callOnClickListener2() {
+        Print.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Invoice.this,FeedbackActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+
+    private void callOnClickListener1() {
         saveAndPrint.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
@@ -105,9 +119,11 @@ public class Invoice extends AppCompatActivity {
             myRef.child(String.valueOf(invoiceNo+1)).setValue(dataobj);
 
             printPdf();
+                Toast.makeText(Invoice.this, "Invoice Generated and downloaded", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void printPdf() {
@@ -201,4 +217,5 @@ public class Invoice extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,itemList);
         spinner.setAdapter(adapter);
     }
+
 }

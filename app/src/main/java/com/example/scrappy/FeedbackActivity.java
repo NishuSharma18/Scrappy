@@ -23,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class FeedbackActivity extends AppCompatActivity {
 
     private TextView dealerName,totalRating;
@@ -36,6 +38,7 @@ public class FeedbackActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         // initialising all values
         dealerName = findViewById(R.id.dealerName);

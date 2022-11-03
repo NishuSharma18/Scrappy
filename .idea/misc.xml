@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.164" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/drawable/circular_btn.xml" value="0.164" />
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/drawable/drawable_btn.xml" value="0.187" />
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/drawable/input_bg.xml" value="0.187" />
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_feedback.xml" value="0.2857142857142857" />
@@ -12,6 +14,7 @@
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_main.xml" value="0.18857142857142858" />
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_registration.xml" value="0.2857142857142857" />
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/row_review.xml" value="0.32044198895027626" />
+        <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.164" />
       </map>
     </option>
   </component>

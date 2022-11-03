@@ -22,16 +22,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
-private Button bt;
+private Button dealerBtn,customerBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bt = findViewById(R.id.button);
-        bt.setOnClickListener(new View.OnClickListener() {
+
+        Objects.requireNonNull(getSupportActionBar()).hide();
+        dealerBtn = findViewById(R.id.dealerBtn);
+        customerBtn = findViewById(R.id.customerBtn);
+        dealerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        customerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                 startActivity(intent);
             }
