@@ -52,6 +52,7 @@ import java.util.Date;
 import java.util.Objects;
 
 public class Invoice extends AppCompatActivity {
+
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("record");
     DataObj dataobj = new DataObj();
@@ -217,5 +218,4 @@ public class Invoice extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,itemList);
         spinner.setAdapter(adapter);
     }
-
 }

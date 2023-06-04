@@ -47,7 +47,6 @@ public class RegistrationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        Objects.requireNonNull(getSupportActionBar()).hide();
 
         TextView btn = findViewById(R.id.LoginTxtBtn);
         btn.setOnClickListener(new View.OnClickListener() {

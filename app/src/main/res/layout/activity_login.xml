@@ -168,15 +168,18 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.311" />
 
-    <TextView
-        android:id="@+id/SignupTextBtn"
-        android:layout_width="85dp"
-        android:layout_height="36dp"
+    <Button
+        android:id="@+id/SignupBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="SignUp"
+        android:text="Sign Up"
+        android:backgroundTint="@color/white"
         android:textColor="#680D0D"
         android:textSize="16sp"
         android:textStyle="bold|italic"

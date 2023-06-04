@@ -48,28 +48,29 @@ public class GoogleSignInActivity extends LoginActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-    progressDialog = new ProgressDialog(this);
-    progressDialog.setMessage("Signing In...");
-    progressDialog.show();
-    // configure google sign in
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Signing In...");
+        progressDialog.show();
+        // configure google sign in
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-        .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        mGoogleSignInClint = GoogleSignIn.getClient(this,gso);
+        mGoogleSignInClint = GoogleSignIn.getClient(this, gso);
 
         Intent signInIntent = mGoogleSignInClint.getSignInIntent();
-        startActivityForResult(signInIntent,RC_SIGN_IN);
+        startActivityForResult(signInIntent, RC_SIGN_IN);
 
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode== RC_SIGN_IN) {
+        if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
@@ -77,15 +78,15 @@ public class GoogleSignInActivity extends LoginActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
 
             } catch (ApiException e) {
-                Toast.makeText(this, "Google sign in failed"+task.getException(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Google sign in failed" + task.getException(), Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
                 finish();
             }
         }
-        }
+    }
 
 
-      private void firebaseAuthWithGoogle(String idToken){
+    private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -99,7 +100,7 @@ public class GoogleSignInActivity extends LoginActivity {
                         } else {
                             progressDialog.dismiss();
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(GoogleSignInActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(GoogleSignInActivity.this, "" + task.getException(), Toast.LENGTH_SHORT).show();
                             finish();
                         }
                     }
@@ -107,8 +108,8 @@ public class GoogleSignInActivity extends LoginActivity {
     }
 
     private void updateUI(FirebaseUser user) {
-        Intent intent = new Intent(GoogleSignInActivity.this,Invoice.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(GoogleSignInActivity.this, Invoice.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 

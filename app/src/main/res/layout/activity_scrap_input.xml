@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   Created by Abhinav Pandey on 19/05/23, 5:19 PM
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".scrapInput">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="Quantity to Sell"
+        android:textColor="@color/black"
+        android:layout_marginBottom="50dp"
+        android:textSize="30sp"></TextView>
+
+    <EditText
+        android:id="@+id/metallic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Quantity of metallic scrap"
+        android:inputType="numberDecimal"
+        android:textSize="16sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/plastic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Quantity of plastic scrap"
+        android:inputType="numberDecimal"
+        android:textSize="16sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/paper"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Quantity of paper scrap"
+        android:inputType="numberDecimal"
+        android:textSize="16sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/glass"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Quantity of glass scrap"
+        android:inputType="numberDecimal"
+        android:textSize="16sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/textile"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Quantity of textile scrap"
+        android:inputType="numberDecimal"
+        android:textSize="16sp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/electronic"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="15dp"
+        android:hint="Quantity of electronic scrap"
+        android:inputType="numberDecimal"
+        android:textSize="16sp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/continueBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginRight="100dp"
+        android:text="Continue"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="center"
+        android:background="@drawable/drawable_btn">
+
+    </Button>
+
+</LinearLayout>

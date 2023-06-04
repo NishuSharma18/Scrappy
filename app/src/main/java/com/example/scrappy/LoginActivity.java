@@ -18,6 +18,7 @@ package com.example.scrappy;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -38,8 +39,8 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Objects;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText inputEmail,password;
-    Button login;
+    EditText inputEmail, password;
+    Button login, signUp;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     ProgressDialog progressDialog;
     FirebaseAuth mAuth;
@@ -51,13 +52,12 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        Objects.requireNonNull(getSupportActionBar()).hide();
+        signUp = findViewById(R.id.SignupBtn);
 
-        TextView btn2 = findViewById(R.id.SignupTextBtn);
-        btn2.setOnClickListener(new View.OnClickListener() {
+        signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,RegistrationActivity.class));
+                startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
             }
         });
 
@@ -89,8 +89,8 @@ public class LoginActivity extends AppCompatActivity {
         googleBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              Intent intent = new Intent(LoginActivity.this,GoogleSignInActivity.class);
-              startActivity(intent);
+                Intent intent = new Intent(LoginActivity.this, GoogleSignInActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -100,29 +100,27 @@ public class LoginActivity extends AppCompatActivity {
         String email = inputEmail.getText().toString();
         String password3 = password.getText().toString();
 
-        if(!email.matches(emailPattern)){
+        if (!email.matches(emailPattern)) {
             inputEmail.setError("Enter Valid Email");
             inputEmail.requestFocus();
-        }
-        else if(password3.isEmpty() || password3.length() <6){
+        } else if (password3.isEmpty() || password3.length() < 6) {
             password.setError("Enter Proper Password");
-        }
-        else{
+        } else {
             progressDialog.setMessage("Please wait while Login..");
             progressDialog.setTitle("Login");
             progressDialog.setCanceledOnTouchOutside(false);
             progressDialog.show();
 
-            mAuth.signInWithEmailAndPassword(email,password3).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            mAuth.signInWithEmailAndPassword(email, password3).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful()){
+                    if (task.isSuccessful()) {
                         progressDialog.dismiss();
                         sendUserToNextActivity();
                         Toast.makeText(LoginActivity.this, "Login Successful 😊😊", Toast.LENGTH_SHORT).show();
-                    }else{
+                    } else {
                         progressDialog.dismiss();
-                        Toast.makeText(LoginActivity.this, ""+task.getException(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Please enter correct email/password", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -131,8 +129,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void sendUserToNextActivity() {
-        Intent intent = new Intent(LoginActivity.this,Invoice.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
+        Intent intent = new Intent(LoginActivity.this, Invoice.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 }
