@@ -45,7 +45,7 @@ private Button dealerBtn,customerBtn;
         customerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this,PaymentActivity.class);
                 startActivity(intent);
             }
         });

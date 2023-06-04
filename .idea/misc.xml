@@ -15,6 +15,11 @@
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/activity_registration.xml" value="0.2857142857142857" />
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/layout/row_review.xml" value="0.32044198895027626" />
         <entry key="..\:/Users/asnis/AndroidStudioProjects/Scrappy2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.164" />
+        <entry key="..\:/movies/Scrappy/app/src/main/res/drawable/edit_text_bg.xml" value="0.1605" />
+        <entry key="..\:/movies/Scrappy/app/src/main/res/layout/activity_feedback.xml" value="0.192481884057971" />
+        <entry key="..\:/movies/Scrappy/app/src/main/res/layout/activity_payment.xml" value="0.1" />
+        <entry key="..\:/movies/Scrappy/app/src/main/res/layout/activity_rating_input.xml" value="0.192481884057971" />
+        <entry key="..\:/movies/Scrappy/app/src/main/res/layout/row_review.xml" value="0.192481884057971" />
       </map>
     </option>
   </component>
