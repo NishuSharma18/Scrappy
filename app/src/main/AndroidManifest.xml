@@ -63,6 +63,9 @@
                 android:value="" />
         </activity>
         <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
             android:name=".RatingInputActivity"
             android:exported="false">
             <meta-data
