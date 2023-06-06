@@ -26,11 +26,12 @@ comfort of your homes, without even moving an inch away from your TV.<br />
 
 ## Technology Stack:
   1) Java
-  2) Dexter Api 
+  2) FireBase Authentication
   3) FireBase Realtime DataBase
   4) SQLite DataBase
   5) Razorpay Payment 
-  6) Google Maps Api
+  6) Google Maps SDK
+  7) Dexter Library
 
 ## Scrrenshots:
 ![Screenshot_20230326-020949](https://user-images.githubusercontent.com/93839989/227752087-daab6cc8-6c90-468f-8b29-2ff4ca8f978e.png)
