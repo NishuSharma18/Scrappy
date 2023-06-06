@@ -34,7 +34,16 @@ comfort of your homes, without even moving an inch away from your TV.<br />
   7) Dexter Library
 
 ## Scrrenshots:
-![Screenshot_20230326-020949](https://user-images.githubusercontent.com/93839989/227752087-daab6cc8-6c90-468f-8b29-2ff4ca8f978e.png)
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/2b19c571-73d8-48e6-902a-67b38aff4b0e" width="280" height="580"><br /> 
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/651e8a6b-46c6-4ef4-8e51-c339fd2e13df" width="280" height="580"><br />
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/31d328de-8bca-4643-a406-da84b5ace311" width="280" height="580"><br /> 
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/ae7c303a-4f94-410d-8413-1dd3d6b98034" width="280" height="580"> <br />
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/94641201-9f25-4df7-8e1a-50f580c8b52d" width="280" height="580"><br /> 
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/3f19c1e1-085a-42ab-bb4a-dd0720c7fe53" width="280" height="580"><br />  
+
+
+
+
 
 ## Contributors:
 Team Name: The Mavericks
