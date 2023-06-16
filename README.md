@@ -22,7 +22,7 @@ comfort of your homes, without even moving an inch away from your TV.<br />
 -It suggest the scrap availability based on his nearby location.
 
 ## Demo Video Link:
-  <a href="https://youtu.be/jwGA8UNgN6">https://youtu.be/jwGA8UNgN6w</a>
+  <a href="https://youtu.be/Ti44maUWuxU">https://youtu.be/Ti44maUWuxU</a>
 
 ## Technology Stack:
   1) Java
