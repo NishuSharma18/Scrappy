@@ -36,6 +36,9 @@ comfort of your homes, without even moving an inch away from your TV.<br />
 ## Scrrenshots:
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/0f2c1b87-f386-4076-a9a6-9234c3d375b9" width="280" height="580"><br /> 
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/a369cb6d-9b2f-439d-ae2a-a6e0dbcfa637" width="280" height="580"><br /> 
+<img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/91b244ff-7b8d-4772-a0c8-a83b65243470" width="280" height="580"><br /> 
+<img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/ff3a483c-10a0-45e0-aa1a-d18f0ce46190" width="280" height="580"><br /> 
+
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/118cc653-39f4-4e3b-801f-46c87360aa06" width="280" height="580"><br /> 
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/ef2e9d58-363d-4391-9018-15313c295c80" width="280" height="580"><br /> 
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/d00d0eeb-758d-4901-873f-4b9e20b0fabd" width="280" height="580"><br /> 
