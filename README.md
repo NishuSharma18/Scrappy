@@ -22,7 +22,7 @@ comfort of your homes, without even moving an inch away from your TV.<br />
 -It suggest the scrap availability based on his nearby location.
 
 ## Demo Video Link:
-  <a href="https://youtu.be/dQw4w9WgXcQ">https://youtu.be/c2Kxozciptg</a>
+  <a href="">https://youtu.be/c2Kxozciptg</a>
 
 ## Technology Stack:
   1) Java
@@ -39,8 +39,14 @@ comfort of your homes, without even moving an inch away from your TV.<br />
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/31d328de-8bca-4643-a406-da84b5ace311" width="280" height="580"><br /> 
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/ae7c303a-4f94-410d-8413-1dd3d6b98034" width="280" height="580"> <br />
  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/94641201-9f25-4df7-8e1a-50f580c8b52d" width="280" height="580"><br /> 
- <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/3f19c1e1-085a-42ab-bb4a-dd0720c7fe53" width="280" height="580"><br />  
-
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/3f19c1e1-085a-42ab-bb4a-dd0720c7fe53" width="280" height="580"><br />
+  
+ <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/fb9d20bd-85c1-4b24-ac2d-e6774cb47a91" width="280" height="580"><br />
+  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/ffe09e90-b811-48a3-9db7-d3c2e63dd150" width="280" height="580"><br />
+  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/80969986-2137-409c-a774-bb26c8600120" width="280" height="580"><br />  
+  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/f4cdd960-230d-4cdf-9784-88931c4c0cd4" width="280" height="580"><br />
+  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/f311d0b9-3fc3-48fa-bd35-7eb6c7b87a4b" width="280" height="580"><br />
+  <img src="https://github.com/NishuSharma18/Scrappy/assets/93839989/41f0491d-57fa-47fa-a68b-b4e084cc13c8" width="280" height="580"><br />
 
 
 
